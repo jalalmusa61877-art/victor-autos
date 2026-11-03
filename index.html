@@ -1,0 +1,337 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Victor Autos | Premium Cars</title>
+<meta name="description" content="Discover quality luxury and reliable vehicles at Victor Autos, Ijebu Ode, Ogun State.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root{--gold:#d5aa55;--dark:#101112;--light:#f6f5f2;--muted:#777}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:#fff;color:#171717}
+a{text-decoration:none;color:inherit}
+button{font:inherit;cursor:pointer}
+.topbar{background:#111;color:#ddd;text-align:center;padding:10px;font-size:12px;letter-spacing:1px}
+header{background:#fff;position:sticky;top:0;z-index:50;box-shadow:0 3px 18px #0000000d}
+.nav{max-width:1200px;margin:auto;padding:17px 22px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:'Playfair Display',serif;font-size:25px;font-weight:800;letter-spacing:1px}
+.logo span{color:var(--gold)}
+.navlinks{display:flex;gap:28px;align-items:center}
+.navlinks a{font-size:13px;font-weight:700}
+.navlinks a:hover{color:#b88932}
+.navcontact,.gold-btn{background:var(--gold);color:#151515;padding:13px 20px;border-radius:3px;font-weight:800;font-size:12px;display:inline-block;border:0}
+.menu{display:none;background:none;border:0;font-size:26px}
+.hero{background:linear-gradient(90deg,#090b0de8,#090b0d55),url('images/ES350-1.jpg') center/cover;min-height:570px;display:flex;align-items:center;color:white}
+.hero-content{max-width:1200px;width:100%;margin:auto;padding:80px 25px}
+.eyebrow{color:var(--gold);font-size:12px;font-weight:800;letter-spacing:3px;text-transform:uppercase}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(42px,7vw,76px);line-height:1.08;max-width:720px;margin:20px 0}
+.hero p{color:#ddd;max-width:530px;line-height:1.8;font-size:15px;margin-bottom:28px}
+.hero-actions{display:flex;gap:13px;flex-wrap:wrap}
+.outline-btn{border:1px solid #ffffff99;color:#fff;padding:13px 20px;font-size:12px;font-weight:800}
+.trust-strip{background:#171819;color:#fff;display:grid;grid-template-columns:repeat(4,1fr);padding:25px max(20px,calc((100% - 1160px)/2));gap:15px}
+.trust-item{text-align:center;border-right:1px solid #ffffff22;padding:5px}
+.trust-item:last-child{border:0}
+.trust-item strong{display:block;color:var(--gold);font-size:18px;margin-bottom:5px}
+.trust-item span{font-size:11px;color:#ccc}
+section{padding:85px 22px}
+.container{max-width:1160px;margin:auto}
+.section-head{text-align:center;margin-bottom:38px}
+.section-head .eyebrow{display:block;margin-bottom:12px}
+.section-head h2{font-family:'Playfair Display',serif;font-size:clamp(30px,4vw,43px)}
+.section-head p{color:var(--muted);font-size:14px;margin-top:12px}
+.inventory{background:var(--light)}
+.car-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.car-card{background:white;box-shadow:0 7px 25px #0000000a;overflow:hidden;transition:.3s}
+.car-card:hover{transform:translateY(-7px);box-shadow:0 14px 35px #00000016}
+.car-photo{height:225px;position:relative;overflow:hidden;background:#ddd}
+.car-photo img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s}
+.car-card:hover .car-photo img{transform:scale(1.05)}
+.photo-tag{position:absolute;top:14px;left:14px;background:#171819;color:var(--gold);padding:7px 11px;font-size:10px;font-weight:800;letter-spacing:1px}
+.car-info{padding:21px}
+.car-info h3{font-size:19px;margin-bottom:8px}
+.car-info p{font-size:12px;color:#777;margin-bottom:17px}
+.car-bottom{display:flex;align-items:center;justify-content:space-between;gap:10px;border-top:1px solid #eee;padding-top:15px}
+.price{font-weight:800;font-size:15px}
+.view-btn{background:#171819;color:white;padding:11px 15px;border:0;font-size:11px;font-weight:800}
+.view-btn:hover{background:var(--gold);color:#111}
+.why{background:#fff}
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.why-card{padding:28px;background:#f7f6f3;border-bottom:3px solid var(--gold)}
+.why-card .symbol{font-size:27px;margin-bottom:17px}
+.why-card h3{font-size:17px;margin-bottom:10px}
+.why-card p{font-size:13px;color:#777;line-height:1.8}
+.about{background:#151719;color:#fff}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:55px;align-items:center}
+.about-img{width:100%;height:390px;object-fit:cover}
+.about h2{font-family:'Playfair Display',serif;font-size:40px;margin:15px 0}
+.about p{color:#ccc;line-height:1.9;font-size:14px;margin-bottom:18px}
+.contact{background:#f5f3ee;text-align:center}
+.contact h2{font-family:'Playfair Display',serif;font-size:40px;margin:14px 0}
+.contact p{color:#666;line-height:1.8;font-size:14px;margin-bottom:22px}
+.contact-details{margin:25px auto;line-height:2.1;font-size:14px}
+footer{background:#0e0f10;color:#aaa;padding:30px 20px;text-align:center;font-size:12px}
+footer strong{color:var(--gold)}
+.float-wa{position:fixed;right:20px;bottom:22px;background:#20bd65;color:white;border-radius:50px;padding:15px 20px;font-size:13px;font-weight:800;z-index:60;box-shadow:0 5px 20px #0003}
+.reveal{opacity:0;transform:translateY(25px);transition:opacity .7s,transform .7s}
+.reveal.active{opacity:1;transform:translateY(0)}
+
+/* CAR DETAILS POPUP */
+.modal{position:fixed;inset:0;background:#000d;z-index:100;display:none;align-items:center;justify-content:center;padding:18px}
+.modal.open{display:flex}
+.modal-box{background:white;width:min(850px,100%);max-height:92vh;overflow:auto;position:relative;border-radius:8px}
+.modal-close{position:absolute;right:13px;top:13px;z-index:5;width:38px;height:38px;border:0;border-radius:50%;background:#111;color:white;font-size:23px}
+.gallery{height:390px;background:#111;position:relative;display:flex;align-items:center;justify-content:center}
+.gallery img{width:100%;height:100%;object-fit:contain}
+.gallery-arrow{position:absolute;top:50%;transform:translateY(-50%);background:#0009;color:#fff;border:1px solid #ffffff55;width:42px;height:48px;font-size:25px}
+.gallery-arrow.prev{left:12px}.gallery-arrow.next{right:12px}
+.photo-count{position:absolute;bottom:12px;left:50%;transform:translateX(-50%);background:#000a;color:#fff;padding:7px 13px;font-size:12px}
+.modal-info{padding:25px}
+.modal-info h2{font-family:'Playfair Display',serif;font-size:29px;margin-bottom:8px}
+.modal-price{font-size:21px;font-weight:800;color:#a77a27;margin:12px 0}
+.modal-info p{font-size:13px;color:#777;line-height:1.7}
+.modal-actions{display:flex;gap:12px;margin-top:20px;flex-wrap:wrap}
+.modal-wa{background:#1ca65a;color:white;padding:14px 20px;font-weight:800;font-size:12px}
+.modal-call{background:#171819;color:white;padding:14px 20px;font-weight:800;font-size:12px}
+body.modal-open{overflow:hidden}
+@media(max-width:850px){
+ .navlinks{display:none;position:absolute;top:70px;left:0;width:100%;background:white;padding:25px;flex-direction:column;box-shadow:0 12px 15px #0001}
+ .navlinks.open{display:flex}.menu{display:block}.navcontact{display:none}
+ .car-grid{grid-template-columns:repeat(2,1fr)}
+ .about-grid{gap:28px}
+}
+@media(max-width:600px){
+ .hero{min-height:520px}.hero-content{padding:65px 22px}
+ .trust-strip{grid-template-columns:repeat(2,1fr);row-gap:20px}
+ .trust-item:nth-child(2){border:0}
+ .car-grid,.why-grid,.about-grid{grid-template-columns:1fr}
+ section{padding:65px 17px}
+ .car-photo{height:230px}
+ .about-img{height:280px}
+ .gallery{height:270px}
+ .modal-info h2{font-size:24px}
+}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+</style>
+</head>
+
+<body>
+<div class="topbar">QUALITY VEHICLES • TRUSTED SERVICE • I J E B U  O D E</div>
+
+<header>
+ <nav class="nav">
+  <a href="#" class="logo">VICTOR <span>AUTOS.</span></a>
+  <button class="menu" id="menuToggle" aria-label="Open menu">☰</button>
+  <div class="navlinks" id="navLinks">
+   <a href="#home">HOME</a><a href="#inventory">OUR CARS</a><a href="#about">ABOUT US</a><a href="#contact">CONTACT</a>
+  </div>
+  <a class="navcontact" href="https://wa.me/2348165255855">CONTACT US</a>
+ </nav>
+</header>
+
+<main>
+<section class="hero" id="home">
+ <div class="hero-content reveal">
+  <span class="eyebrow">WELCOME TO VICTOR AUTOS</span>
+  <h1>Drive Your Dream.<br>Own The Experience.</h1>
+  <p>Discover quality vehicles selected to bring you comfort, style and confidence. Your next car is waiting for you at Victor Autos.</p>
+  <div class="hero-actions">
+   <a href="#inventory" class="gold-btn">EXPLORE OUR CARS</a>
+   <a href="https://wa.me/2348165255855" class="outline-btn">CHAT WITH US</a>
+  </div>
+ </div>
+</section>
+
+<div class="trust-strip">
+ <div class="trust-item"><strong>QUALITY</strong><span>Carefully selected vehicles</span></div>
+ <div class="trust-item"><strong>VALUE</strong><span>Great options for your budget</span></div>
+ <div class="trust-item"><strong>TRUST</strong><span>Customer-focused service</span></div>
+ <div class="trust-item"><strong>SUPPORT</strong><span>We're here to help</span></div>
+</div>
+
+<section class="inventory" id="inventory">
+ <div class="container">
+  <div class="section-head reveal">
+   <span class="eyebrow">OUR COLLECTION</span>
+   <h2>Explore Our Vehicles</h2>
+   <p>Find a vehicle that matches your taste, lifestyle and budget.</p>
+  </div>
+
+  <div class="car-grid">
+   <article class="car-card reveal">
+    <div class="car-photo"><img src="images/ES350-1.jpg" alt="Lexus ES350" onerror="this.style.display='none'"><span class="photo-tag">FEATURED</span></div>
+    <div class="car-info"><h3>Lexus ES350</h3><p>Luxury • Comfort • Performance</p><div class="car-bottom"><span class="price">₦18,500,000</span><button class="view-btn" onclick="openCar(0)">VIEW CAR ↗</button></div></div>
+   </article>
+
+   <article class="car-card reveal">
+    <div class="car-photo"><img src="images/Mercedes-Benz-1.jpg" alt="Mercedes Benz" onerror="this.style.display='none'"><span class="photo-tag">PREMIUM</span></div>
+    <div class="car-info"><h3>Mercedes-Benz</h3><p>Elegance • Luxury • Class</p><div class="car-bottom"><span class="price">Contact for price</span><button class="view-btn" onclick="openCar(1)">VIEW CAR ↗</button></div></div>
+   </article>
+
+   <article class="car-card reveal">
+    <div class="car-photo"><img src="images/Lexus-RX-1.jpg" alt="Lexus RX" onerror="this.style.display='none'"><span class="photo-tag">LUXURY SUV</span></div>
+    <div class="car-info"><h3>Lexus RX</h3><p>Comfort • Space • Performance</p><div class="car-bottom"><span class="price">Contact for price</span><button class="view-btn" onclick="openCar(2)">VIEW CAR ↗</button></div></div>
+   </article>
+
+   <article class="car-card reveal">
+    <div class="car-photo"><img src="images/Lexus-1.jpg" alt="Lexus" onerror="this.style.display='none'"><span class="photo-tag">LUXURY</span></div>
+    <div class="car-info"><h3>Lexus</h3><p>Style • Comfort • Reliability</p><div class="car-bottom"><span class="price">Contact for price</span><button class="view-btn" onclick="openCar(3)">VIEW CAR ↗</button></div></div>
+   </article>
+
+   <article class="car-card reveal">
+    <div class="car-photo"><img src="images/Honda-1.jpg" alt="Honda" onerror="this.style.display='none'"><span class="photo-tag">RELIABLE</span></div>
+    <div class="car-info"><h3>Honda</h3><p>Practical • Comfortable • Reliable</p><div class="car-bottom"><span class="price">Contact for price</span><button class="view-btn" onclick="openCar(4)">VIEW CAR ↗</button></div></div>
+   </article>
+
+   <article class="car-card reveal">
+    <div class="car-photo"><img src="images/Toyota-camry-1.jpg" alt="Toyota Camry" onerror="this.style.display='none'"><span class="photo-tag">POPULAR</span></div>
+    <div class="car-info"><h3>Toyota Camry</h3><p>Comfort • Reliability • Everyday drive</p><div class="car-bottom"><span class="price">Contact for price</span><button class="view-btn" onclick="openCar(5)">VIEW CAR ↗</button></div></div>
+   </article>
+  </div>
+ </div>
+</section>
+
+<section class="why">
+ <div class="container">
+  <div class="section-head reveal"><span class="eyebrow">THE VICTOR AUTOS DIFFERENCE</span><h2>Why Choose Us?</h2><p>We make finding your next vehicle a confident experience.</p></div>
+  <div class="why-grid">
+   <div class="why-card reveal"><div class="symbol">✦</div><h3>Quality Selection</h3><p>Explore a range of vehicles chosen with quality, comfort and value in mind.</p></div>
+   <div class="why-card reveal"><div class="symbol">◇</div><h3>Customer Confidence</h3><p>We help you get the information you need to make a confident buying decision.</p></div>
+   <div class="why-card reveal"><div class="symbol">☎</div><h3>Personal Assistance</h3><p>Have a question about a vehicle? Our team is ready to speak with you.</p></div>
+  </div>
+ </div>
+</section>
+
+<section class="about" id="about">
+ <div class="container about-grid">
+  <img class="about-img reveal" src="images/ES350-2.jpg" alt="Victor Autos vehicle">
+  <div class="reveal"><span class="eyebrow">ABOUT VICTOR AUTOS</span><h2>Your Next Car Starts Here.</h2><p>At Victor Autos, we are passionate about helping customers find vehicles that suit their needs and preferences.</p><p>Whether you're looking for luxury, comfort or everyday reliability, get in touch and let us help you explore your options.</p><a class="gold-btn" href="https://wa.me/2348165255855">TALK TO OUR TEAM</a></div>
+ </div>
+</section>
+
+<section class="contact" id="contact">
+ <div class="container reveal">
+  <span class="eyebrow">LET'S GET YOU MOVING</span>
+  <h2>Ready To Find Your Car?</h2>
+  <p>Contact Victor Autos today to ask about available vehicles and make your next move.</p>
+  <div class="contact-details"><strong>Phone / WhatsApp:</strong> 0816 525 5855<br><strong>Location:</strong> Car Lot Beside Ijari Central Mosque, Ijebu Ode, Ogun State.</div>
+  <a class="gold-btn" href="https://wa.me/2348165255855?text=Hello%20Victor%20Autos%2C%20I%20am%20interested%20in%20your%20cars.">ENQUIRE ON WHATSAPP</a>
+ </div>
+</section>
+</main>
+
+<footer><strong>VICTOR AUTOS.</strong><br><br>Quality Vehicles. Trusted Service.<br><br>© <span id="year"></span> Victor Autos. All rights reserved.</footer>
+
+<a class="float-wa" href="https://wa.me/2348165255855" target="_blank">☏ WhatsApp Us</a>
+
+<!-- VEHICLE POPUP -->
+<div class="modal" id="carModal" onclick="outsideClose(event)">
+ <div class="modal-box">
+  <button class="modal-close" onclick="closeCar()" aria-label="Close popup">×</button>
+  <div class="gallery">
+   <img id="galleryImage" src="" alt="Vehicle photo">
+   <button class="gallery-arrow prev" onclick="changePhoto(-1)">‹</button>
+   <button class="gallery-arrow next" onclick="changePhoto(1)">›</button>
+   <span class="photo-count" id="photoCount"></span>
+  </div>
+  <div class="modal-info">
+   <h2 id="modalName"></h2>
+   <div class="modal-price" id="modalPrice"></div>
+   <p id="modalDescription"></p>
+   <div class="modal-actions">
+    <a class="modal-wa" id="modalWhatsApp" href="#" target="_blank">ENQUIRE ON WHATSAPP</a>
+    <a class="modal-call" href="tel:08165255855">CALL DEALER</a>
+   </div>
+  </div>
+ </div>
+</div>
+
+<script>
+const cars = [
+ {name:"Lexus ES350",price:"₦18,500,000",description:"A stylish luxury sedan combining comfort, performance and elegance.",photos:["images/ES350-1.jpg","images/ES350-2.jpg","images/ES350-3.jpg","images/ES350-4.jpg","images/ES350-5.jpg"]},
+ {name:"Mercedes-Benz",price:"Contact for price",description:"Discover the elegance and premium driving experience of Mercedes-Benz.",photos:["images/Mercedes-Benz-1.jpg"]},
+ {name:"Lexus RX",price:"Contact for price",description:"A luxury SUV offering comfort, space and a refined driving experience.",photos:["images/Lexus-RX-1.jpg","images/Lexus-RX-2.jpg"]},
+ {name:"Lexus",price:"Contact for price",description:"Explore this Lexus vehicle and ask us for more details.",photos:["images/Lexus-1.jpg","images/Lexus-2.jpg"]},
+ {name:"Honda",price:"Contact for price",description:"A practical and comfortable vehicle. Contact us for more information.",photos:["images/Honda-1.jpg","images/Honda-2.jpg","images/Honda-3.jpg"]},
+ {name:"Toyota Camry",price:"Contact for price",description:"A popular choice for comfort and everyday reliability.",photos:["images/Toyota-camry-1.jpg"]}
+];
+
+let currentCar=0;
+let currentPhoto=0;
+
+function openCar(index){
+ currentCar=index;
+ currentPhoto=0;
+ const car=cars[index];
+ document.getElementById("modalName").textContent=car.name;
+ document.getElementById("modalPrice").textContent=car.price;
+ document.getElementById("modalDescription").textContent=car.description;
+ document.getElementById("modalWhatsApp").href="https://wa.me/2348165255855?text="+encodeURIComponent("Hello Victor Autos, I am interested in the "+car.name+". Please send me more details.");
+ document.getElementById("carModal").classList.add("open");
+ document.body.classList.add("modal-open");
+ showPhoto();
+}
+
+function showPhoto(){
+ const car=cars[currentCar];
+ const image=document.getElementById("galleryImage");
+ image.src=car.photos[currentPhoto];
+ image.alt=car.name+" photo "+(currentPhoto+1);
+ document.getElementById("photoCount").textContent=(currentPhoto+1)+" / "+car.photos.length;
+ document.querySelector(".gallery-arrow.prev").style.display=car.photos.length>1?"block":"none";
+ document.querySelector(".gallery-arrow.next").style.display=car.photos.length>1?"block":"none";
+}
+
+function changePhoto(direction){
+ const photos=cars[currentCar].photos;
+ currentPhoto=(currentPhoto+direction+photos.length)%photos.length;
+ showPhoto();
+}
+
+function closeCar(){
+ document.getElementById("carModal").classList.remove("open");
+ document.body.classList.remove("modal-open");
+}
+
+function outsideClose(event){
+ if(event.target.id==="carModal")closeCar();
+}
+
+document.addEventListener("keydown",function(event){
+ if(!document.getElementById("carModal").classList.contains("open"))return;
+ if(event.key==="Escape")closeCar();
+ if(event.key==="ArrowRight")changePhoto(1);
+ if(event.key==="ArrowLeft")changePhoto(-1);
+});
+
+document.getElementById("menuToggle").addEventListener("click",function(){
+ document.getElementById("navLinks").classList.toggle("open");
+});
+
+document.querySelectorAll("#navLinks a").forEach(function(link){
+ link.addEventListener("click",function(){
+  document.getElementById("navLinks").classList.remove("open");
+ });
+});
+
+document.getElementById("year").textContent=new Date().getFullYear();
+
+const observer=new IntersectionObserver(function(entries){
+ entries.forEach(function(entry){
+  if(entry.isIntersecting){
+   entry.target.classList.add("active");
+   observer.unobserve(entry.target);
+  }
+ });
+},{threshold:.12});
+
+document.querySelectorAll(".reveal").forEach(function(element){
+ observer.observe(element);
+});
+</script>
+</body>
+</html>
